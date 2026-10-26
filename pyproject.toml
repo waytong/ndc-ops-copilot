@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ndc-ops-copilot"
+version = "0.3.0"
+description = "NDC integration, diagnostics, and servicing copilot"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "waytong" }]
+dependencies = []
+
+[project.scripts]
+ndc-copilot = "ndc_ops_copilot.cli:main"
+ndc-copilot-mcp = "ndc_ops_copilot.mcp_server:main"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.unittest]
+start-directory = "tests"
